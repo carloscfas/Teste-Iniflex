@@ -1,5 +1,6 @@
 package model;
 
+import util.Formatador;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -28,5 +29,14 @@ public class Funcionario extends Pessoa {
 
     public void setFuncao(String funcao) {
         this.funcao = funcao;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Nome: %-8s | Data Nasc: %s | Salário: R$ %10s | Função: %s",
+                getNome(),
+                Formatador.formatarData(getDataNascimento()),
+                Formatador.formatarValor(salario),
+                funcao);
     }
 }
