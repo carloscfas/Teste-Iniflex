@@ -11,7 +11,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // 3.1 – Inserir todos os funcionários na mesma ordem da tabela
         List<Funcionario> funcionarios = new ArrayList<>();
 
         funcionarios.add(new Funcionario("Maria", LocalDate.of(2000, 10, 18), new BigDecimal("2009.44"), "Operador"));
@@ -27,38 +26,29 @@ public class Main {
 
         FuncionarioService service = new FuncionarioService(funcionarios);
 
-        // 3.2 – Remover o funcionário “João” da lista
         service.removerPorNome("João");
 
-        // 3.3 – Imprimir todos os funcionários
         System.out.println("=== 3.3 - LISTA DE FUNCIONÁRIOS (SEM JOÃO) ===");
         service.imprimirTodos();
 
-        // 3.4 – Aumento de 10% no salário
         service.aplicarAumento(new BigDecimal("0.10"));
 
-        // 3.5 e 3.6 – Agrupar por função no Map e imprimir
         System.out.println("\n=== 3.6 - FUNCIONÁRIOS AGRUPADOS POR FUNÇÃO ===");
         service.imprimirAgrupadosPorFuncao();
 
-        // 3.8 – Imprimir aniversariantes dos meses 10 e 12
         System.out.println("\n=== 3.8 - ANIVERSARIANTES DOS MESES 10 E 12 ===");
         service.imprimirAniversariantesPorMeses(10, 12);
 
-        // 3.9 – Imprimir funcionário com maior idade
         System.out.println("\n=== 3.9 - FUNCIONÁRIO COM MAIOR IDADE ===");
         service.imprimirMaisVelho();
 
-        // 3.10 – Imprimir lista por ordem alfabética
         System.out.println("\n=== 3.10 - LISTA EM ORDEM ALFABÉTICA ===");
         service.imprimirOrdemAlfabetica();
 
-        // 3.11 – Imprimir total dos salários
         System.out.println("\n=== 3.11 - TOTAL DOS SALÁRIOS ===");
         BigDecimal totalSalarios = service.calcularTotalSalarios();
         System.out.println("Total: R$ " + Formatador.formatarValor(totalSalarios));
 
-        // 3.12 – Imprimir quantos salários mínimos ganha cada um (base: R$ 1212.00)
         System.out.println("\n=== 3.12 - QTD DE SALÁRIOS MÍNIMOS ===");
         service.imprimirSalariosMinimos(new BigDecimal("1212.00"));
     }
