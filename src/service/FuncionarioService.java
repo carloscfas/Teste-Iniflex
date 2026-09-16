@@ -25,7 +25,7 @@ public class FuncionarioService {
         for (int i = 0; i < funcionarios.size(); i++) {
             if (funcionarios.get(i).getNome().equalsIgnoreCase(nome)) {
                 funcionarios.remove(i);
-                break; // Parar o loop após achar o nome
+                break;
             }
         }
     }
@@ -105,7 +105,7 @@ public class FuncionarioService {
         System.out.println("Nome: " + maisVelho.getNome() + " | Idade: " + idade + " anos");
     }
 
-    // 3.10 - Imprimir ordem alfabética (usando o método sort da própria List)
+    // 3.10 - Imprimir ordem alfabética
     public void imprimirOrdemAlfabetica() {
         List<Funcionario> listaOrdenada = new ArrayList<>(funcionarios);
         listaOrdenada.sort((f1, f2) -> f1.getNome().compareToIgnoreCase(f2.getNome()));
